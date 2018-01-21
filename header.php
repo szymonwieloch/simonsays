@@ -16,6 +16,7 @@
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="http://gmpg.org/xfn/11">
+	<link href="https://fonts.googleapis.com/css?family=Francois+One|Lato:400,400i,700,300" rel="stylesheet"> 
 
 	<?php wp_head(); ?>
 </head>
@@ -25,23 +26,6 @@
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'simonsays' ); ?></a>
 
 	<header id="masthead" class="site-header">
-		<div class="site-branding">
-			<?php
-			the_custom_logo();
-			if ( is_front_page() && is_home() ) : ?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-			<?php else : ?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-			<?php
-			endif;
-
-			$description = get_bloginfo( 'description', 'display' );
-			if ( $description || is_customize_preview() ) : ?>
-				<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
-			<?php
-			endif; ?>
-		</div><!-- .site-branding -->
-
 		<nav id="site-navigation" class="main-navigation">
 			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'simonsays' ); ?></button>
 			<?php
@@ -51,6 +35,22 @@
 				) );
 			?>
 		</nav><!-- #site-navigation -->
+		<div class="site-navigation-space"></div>
+		<?php if ( is_front_page() && is_home() && has_header_image()) : ?>
+			<div class="header-space">
+				<h1 class="site-title"><?php bloginfo( 'name' ); ?></h1>
+				<?php 
+					$description = get_bloginfo( 'description', 'display' );
+					if ( $description || is_customize_preview() ) : 
+				?>
+					<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
+				<?php endif; ?>
+				<img src="<?php header_image(); ?>" class="header-custom-image" alt="" />
+
+			</div>
+		<?php endif; ?>
+
+		
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">
