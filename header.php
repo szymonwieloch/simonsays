@@ -27,6 +27,10 @@
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'simonsays' ); ?></a>
 
 	<header id="masthead" class="site-header">
+	<?php if ( ! (is_front_page() && is_home() && has_header_image())) : ?>
+		
+	<?php endif; ?>
+
 		<nav id="site-navigation" class="main-navigation">
 			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'simonsays' ); ?></button>
 			<?php

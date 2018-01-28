@@ -969,3 +969,63 @@ object {
 		width: 100%;
 	}
 }
+
+.rpwe-ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.rpwe-img {
+	float: left;
+	margin-right: 5px;
+	margin-bottom: 5px;
+}
+h3.rpwe-title{
+	clear: none;
+	font-size: 1em;
+	font-weight: bold;
+	margin: auto;
+}
+
+h3.rpwe-title a, h3.rpwe-title a:hover, h3.rpwe-title a:focus, h3.rpwe-title a:active {
+	color: white;
+	text-decoration: none;
+}
+
+
+
+.rpwe-li {
+	clear:both;
+	margin-bottom: 20px;
+}
+
+.widget-title {
+	text-align: center;
+	/*border-bottom: 2px solid #fff; */
+}
+
+.search-submit {
+	display: none;
+}
+
+.search-field{
+	border-width: 0;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+
+a.tag-cloud-link, a.tag-cloud-link:hover, a.tag-cloud-link:focus, a.tag-cloud-link:active {
+	color: white;
+	text-decoration: none;
+}
+
+.site-main {
+	max-width: 800px;
+	margin: 0 auto;
+}
+
+.entry-title {
+	border-bottom: 2px solid #f00;
+}
