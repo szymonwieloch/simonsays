@@ -626,6 +626,15 @@ a:hover, a:active {
 	width: 50%;
 }
 
+.main-navigation .widget {
+	margin: 0;
+}
+
+.lang-item img {
+	height: 1em;
+	vertical-align: middle;
+}
+
 /*--------------------------------------------------------------
 # Accessibility
 --------------------------------------------------------------*/
@@ -912,4 +921,51 @@ object {
 .header-custom-image {
 	width: 100%;
 	display: block;
+}
+
+@keyframes bouncing {
+    0% {bottom: 0%;}
+    50% {bottom: 10%;}
+    100% {bottom: 0%;}
+}
+
+#scroll-down-icon {
+	display: block;
+	margin: 0 auto;
+	animation: bouncing 2s ease 0s infinite normal;
+	position: fixed;
+	bottom: 5%;
+	width: 6%;
+	left: 47%;
+
+}
+
+.site-footer, body{
+	background-color: #212326;
+}
+
+#content {
+	background-color: #FFF;
+}
+
+.site-footer{
+	color: white;
+	padding: 100px 0;
+}
+
+.site-footer h1, .site-footer h2, .site-footer h3{
+	color: white;
+}
+
+.one-third-box {
+	padding: 2em;
+	width: 33.333%;
+	float: left;
+}
+
+@media screen and (max-width: 800px) {
+	.one-third-box {
+		float: none;
+		width: 100%;
+	}
 }

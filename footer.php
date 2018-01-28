@@ -15,16 +15,31 @@
 
 	<footer id="colophon" class="site-footer">
 		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'simonsays' ) ); ?>"><?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'simonsays' ), 'WordPress' );
-			?></a>
-			<span class="sep"> | </span>
-			<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'simonsays' ), 'simonsays', '<a href="http://underscores.me/">Underscores.me</a>' );
-			?>
 		</div><!-- .site-info -->
+		<div id="footer-sidebar" class="secondary">
+			<div id="footer-widgets1" class="one-third-box">
+				<?php
+					if(is_active_sidebar('footer-1')){
+						dynamic_sidebar('footer-1');
+					}
+				?>
+			</div>
+			<div id="footer-widgets2" class="one-third-box">
+				<?php
+					if(is_active_sidebar('footer-2')){
+						dynamic_sidebar('footer-2');
+					}
+				?>
+			</div>
+			<div id="footer-widgets3" class="one-third-box">
+				<?php
+					if(is_active_sidebar('footer-3')){
+						dynamic_sidebar('footer-3');
+					}
+				?>
+			</div>
+			<div class="clear"></div>
+		</div>
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 
