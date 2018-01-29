@@ -748,10 +748,6 @@ a:hover, a:active {
 	display: block;
 }
 
-.hentry {
-	margin: 0 0 1.5em;
-}
-
 .updated:not(.published) {
 	display: none;
 }
@@ -1026,6 +1022,48 @@ a.tag-cloud-link, a.tag-cloud-link:hover, a.tag-cloud-link:focus, a.tag-cloud-li
 	margin: 0 auto;
 }
 
-.entry-title {
-	border-bottom: 2px solid #f00;
+h1.entry-title {
+	font-size: 150%;
+	color: white;
+	display: block;
+	text-align: center;
+	text-shadow: 3px 0 3px #000, -3px 0 3px #000;
 }
+
+.entry-box {
+	width: 25%;
+	float: left;
+	position: relative;
+	overflow: hidden;
+	color: white;
+
+}
+
+.entry-img {
+	width: 100%;
+	display: block;
+	transition: all 0.5s ease;
+}
+
+.entry-box:hover .entry-img {
+	filter: brightness(30%);
+}
+
+.entry-content {
+	position: absolute;
+	bottom: 0px;
+	width: 100%;
+	transition: all 0.5s ease;
+}
+
+.entry-box:hover .entry-content {
+	bottom: 100%;
+}
+
+.entry-text{
+	width: 100%;
+	position: absolute;
+	top: 100%;
+	padding: 10px;
+}
+
