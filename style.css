@@ -944,17 +944,12 @@ object {
 	background-color: #FFF;
 }
 
-.site-footer{
-	color: white;
-	padding: 100px 0;
-}
-
 .site-footer h1, .site-footer h2, .site-footer h3{
 	color: white;
 }
 
 .one-third-box {
-	padding: 2em;
+	padding: 10px;
 	width: 33.333%;
 	float: left;
 }
@@ -1036,6 +1031,7 @@ h1.entry-title {
 	position: relative;
 	overflow: hidden;
 	color: white;
+	padding: 10px;
 
 }
 
@@ -1065,5 +1061,83 @@ h1.entry-title {
 	position: absolute;
 	top: 100%;
 	padding: 10px;
+}
+
+.wide-box{
+	padding: 100px 10px;
+}
+
+.wide-title {
+	border-bottom: 2px solid #f00;
+}
+
+.single-box .wide-title {
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+	max-width: 500px;
+}
+
+.site-footer {
+	color: white;
+}
+
+.single-box table {
+	margin: 0 auto;
+	border-collapse: collapse;
+	border-width: 0;
+	max-width: 800px;
+	table-layout: auto;
+}
+
+.single-box table tr {
+	border-bottom: 1px solid #ddd;
+}
+
+.single-box table tr:last-child {
+	border-bottom: none;
+}
+
+.single-box img {
+	margin: 0;
+	max-width:none;
+	max-height: none;
+}
+
+.single-box td, .single-box tr {
+	vertical-align: middle;
+	border: none;
+	padding: 20px;
+}
+
+.promo-text-box {
+	max-width: 800px;
+	margin: 0 auto;
+}
+
+.promo-text-box a, a.more-link {
+
+    display: inline-block;
+    width: 20em;
+    padding: 0.5em;
+    text-align: center;
+    text-transform: uppercase;
+    border: 1px solid #000;
+    border-radius: 1000px;
+    color: #000;
+
+}
+
+.promo-text-box a:hover, a.more-link:hover {
+	border-color: #000;
+	color: #fff;
+	background-color: #000;
+}
+
+.half-box {
+	width: 50%;
+	float: left;
+	padding: 2em;
 }
 

@@ -23,18 +23,22 @@ get_header(); ?>
 </script>
 
 <?php
-$args = null;
+$sticky = get_option( 'sticky_posts');
+rsort( $sticky );
+$args = array('post__in' => $sticky, 'ignore_sticky_posts' => 1 );
 $myposts = get_posts( $args );
+$myposts_ids = array();
 $double_no = 0;
-foreach ( $myposts as $post ) : setup_postdata( $post ); ?>
-        <?php if (has_post_thumbnail()): ?>
+foreach ( $myposts as $post ) : setup_postdata( $post ); 
+        $myposts_ids[] = $post->ID;
+        if (has_post_thumbnail()): ?>
         <article class="wide-box double-box <?php echo (($double_no %2 ==0) ? 'even-box':'odd-box'); $double_no += 1;?>">
             <div class="half-box promo-img-half-box">
                 <?php the_post_thumbnail('full', array('class' => 'promo-img fadein-on-scroll'));?>
             </div>
             <div class="half-box promo-text-half-box">
                 <div class="promo-text-box">
-                    <h1><?php the_title();?></h1>
+                    <h1 class="wide-title" ><?php the_title();?></h1>
                     <div>
                         <?php the_content();?>
                     </div>
@@ -44,10 +48,12 @@ foreach ( $myposts as $post ) : setup_postdata( $post ); ?>
             <div class="clear"></div>
         </article>
         <?php else: ?>
-            <article class="wide-box single-box ">
-                <h1><?php the_title();?></h1>
-                <div>
-                    <?php the_content();?>
+            <article class="wide-box single-box">
+                <div class="promo-text-box">
+                    <h1 class="wide-title"><?php the_title();?></h1>
+                    <div>
+                        <?php the_content();?>
+                    </div>
                 </div>
                 <div class="clear"></div>
             </article>
@@ -55,13 +61,14 @@ foreach ( $myposts as $post ) : setup_postdata( $post ); ?>
         
     
 <?php endforeach; 
-wp_reset_postdata(); ?>
-<section class="wide-box">
-<h1> <?php echo __("Random posts") ?></h1>
+wp_reset_postdata(); 
+?>
+<section class="wide-box single-box">
+<h1 class="wide-title"> <?php echo __("Random posts") ?></h1>
 
 <?php 
     //how to disable the promo category?
-    $args = array( 'posts_per_page' => 12, 'orderby' => 'rand');
+    $args = array( 'posts_per_page' => 12, 'orderby' => 'rand', 'exclude' => $myposts_ids);
     $postslist = get_posts( $args );
     foreach ( $postslist as $post ) :
         setup_postdata( $post );
@@ -69,6 +76,7 @@ wp_reset_postdata(); ?>
     endforeach; 
     wp_reset_postdata();
 ?>
+<div class="clear"></div>
 </section>
 
 <?php get_footer(); ?>
