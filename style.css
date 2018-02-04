@@ -1112,8 +1112,32 @@ h1.entry-title {
 }
 
 .promo-text-box {
+	max-width: 500px;
+}
+
+.odd-box .half-box{
+	float: left;
+}
+
+.even-box .half-box{
+	float: right;
+}
+
+.odd-box .promo-text-box{
+	float: left;
+}
+
+.even-box .promo-text-box{
+	float: right;
+}
+
+.single-box .promo-text-box {
 	max-width: 800px;
 	margin: 0 auto;
+}
+
+.wide-box canvas {
+	width: 100%;
 }
 
 .promo-text-box a, a.more-link {
@@ -1126,6 +1150,7 @@ h1.entry-title {
     border: 1px solid #000;
     border-radius: 1000px;
     color: #000;
+    text-decoration: none;
 
 }
 

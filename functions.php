@@ -169,6 +169,16 @@ function simonsays_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'simonsays_scripts' );
 
+function simonsays_simplify_custom_fields($fields) {
+	$result = array();
+	foreach( $fields as $key => $value) {
+		if (substr($key, 0, 1) !== '_') {
+			$result[$key] = $value[0];
+		}
+	}
+	return $result;
+}
+
 /**
  * Implement the Custom Header feature.
  */

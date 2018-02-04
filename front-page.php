@@ -21,6 +21,7 @@ get_header(); ?>
     });
 
 </script>
+<script src="<?php echo get_template_directory_uri() ?>/js/bubbles.js" > </script>
 
 <?php
 $sticky = get_option( 'sticky_posts');
@@ -31,10 +32,19 @@ $myposts_ids = array();
 $double_no = 0;
 foreach ( $myposts as $post ) : setup_postdata( $post ); 
         $myposts_ids[] = $post->ID;
-        if (has_post_thumbnail()): ?>
+        $meta_map = simonsays_simplify_custom_fields(get_post_custom());
+        //print_r(simonsays_simplify_custom_fields(get_post_custom()));
+        if (!empty($meta_map) or has_post_thumbnail()): ?>
         <article class="wide-box double-box <?php echo (($double_no %2 ==0) ? 'even-box':'odd-box'); $double_no += 1;?>">
             <div class="half-box promo-img-half-box">
-                <?php the_post_thumbnail('full', array('class' => 'promo-img fadein-on-scroll'));?>
+                <?php if (!empty($meta_map)) : ?>
+                    <canvas id="canvas-<?php the_ID() ?>" width="800" height="600" class=""></canvas>
+                    <script>
+                        drawBubbles('canvas-<?php the_ID()?>', <?php echo json_encode($meta_map)?>);
+                    </script>
+                <?php else : ?>
+                    <?php the_post_thumbnail('full', array('class' => 'promo-img fadein-on-scroll')); ?>
+                <?php endif; ?>
             </div>
             <div class="half-box promo-text-half-box">
                 <div class="promo-text-box">
