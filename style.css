@@ -1168,3 +1168,45 @@ h1.entry-title {
 	padding: 2em;
 }
 
+.archive-description {
+	max-width: 800px;
+	margin: 0 auto;
+}
+
+@media screen and (max-width: 800px) {
+	.entry-box {
+		width: 50%;
+	}
+	.one-third-box {
+		float: none;
+		width: 100%;
+	}
+}
+@media screen and (min-width: 801px) and (max-width: 1200px) {
+	.entry-box {
+		width: 33.33%;
+	}
+}
+
+@media screen and (min-width: 1201px) {
+	.entry-box {
+		width: 25%;
+	}
+}
+
+@media screen and (max-width: 1200px){
+	.half-box {
+		float: none;
+		width: 100%;
+	}
+	.wide-box .promo-text-box {
+		float: none;
+		margin: 0 auto;
+		text-align: left;
+	}
+
+	.half-box h1 {
+		text-align: center;
+	}
+}
+
