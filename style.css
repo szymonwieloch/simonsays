@@ -1014,7 +1014,7 @@ a.tag-cloud-link, a.tag-cloud-link:hover, a.tag-cloud-link:focus, a.tag-cloud-li
 
 .site-main {
 	max-width: 800px;
-	margin: 0 auto;
+	margin: 100px auto;
 }
 
 h1.entry-title {
@@ -1067,11 +1067,18 @@ h1.entry-title {
 	padding: 100px 10px;
 }
 
-.wide-title {
+.archive-box {
+	padding-bottom: 100px;
+	padding-top: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.wide-title, .page-title {
 	border-bottom: 2px solid #f00;
 }
 
-.single-box .wide-title {
+.single-box .wide-title, .page-title {
 	text-align: center;
 	margin-left: auto;
 	margin-right: auto;

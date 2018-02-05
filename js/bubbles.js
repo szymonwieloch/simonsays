@@ -18,6 +18,7 @@ _BUBBLE_TYPES = [
 ];
 
 _STRENGHT = 1;
+_MAX_DT = 1000;
 
 
 
@@ -49,9 +50,13 @@ State.prototype.pushes = function(){
         for (var j in this._bubbles){
             if (i == j) {continue;}
             var second = this._bubbles[j].center();
-            var distance2 = Math.pow(first.x-second.x, 2) + Math.pow(first.y-second.y, 2)
-            pushX += _STRENGHT * (first.x -second.x)/distance2;
-            pushY += _STRENGHT * (first.y - second.y)/distance2;
+			var dx = first.x-second.x;
+			var dy = first.y-second.y;
+            var distance2 = Math.pow(dx, 2) + Math.pow(dy, 2);
+			if (distance2 > 0){ //prevent division by zero
+				pushX += _STRENGHT * (dx/distance2);
+				pushY += _STRENGHT * (dy/distance2);
+			}
         }
         pushes.push({x: pushX, y: pushY});
     }
@@ -76,6 +81,10 @@ function Bubble(speed, width, height, color, size, num, txt){
 Bubble.prototype.draw = function(ctx, timestamp, push){
     if (this.lastChange){
         var dt = timestamp - this.lastChange;
+		//prevent too huge moves when user is not looking at the website
+		if (dt>_MAX_DT){
+			dt = _MAX_DT;
+		}
         this.x += dt * (this.speed.x + push.x);
         this.y += dt * (this.speed.y + push.y);
         if (this.x<0) {
