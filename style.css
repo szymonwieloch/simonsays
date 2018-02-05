@@ -1067,15 +1067,10 @@ h1.entry-title {
 	padding: 100px 10px;
 }
 
-.archive-box {
-	padding-bottom: 100px;
-	padding-top: 10px;
-	padding-left: 10px;
-	padding-right: 10px;
-}
-
 .wide-title, .page-title {
 	border-bottom: 2px solid #f00;
+	display: block;
+	text-align: center;
 }
 
 .single-box .wide-title, .page-title {
