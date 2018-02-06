@@ -572,18 +572,21 @@ a:hover, a:active {
 
 .main-navigation a {
 	display: block;
+	color: white;
 	text-decoration: none;
+	cursor: pointer;
+	line-height: 50px;
+}
+
+#primary-menu a {
 	text-align: center;
 	text-transform: uppercase;
-	cursor: pointer;
-	color: #fff;
 	padding: 0 15px;
-	line-height: 50px;
 }
 
 .site-navigation-space {
 	height: 50px;
-	background-color: #fff;
+	background-color: white;
 }
 
 .main-navigation a:hover, .main-navigation a:active, .main-navigation a:focus {
@@ -1216,5 +1219,19 @@ h1.entry-title {
 	.half-box h1 {
 		text-align: center;
 	}
+}
+.menu-name {
+	margin-right: 30px;
+	float: left;
+	font-weight: bold;
+	line-height: 50px;
+	color: white;
+}
+
+.custom-logo {
+	height: 36px;
+	width: auto;
+	float: left;
+	margin: 7px;
 }
 

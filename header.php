@@ -31,7 +31,19 @@
 	<?php endif; ?>
 
 		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">&#x2630;</button>
+			<a href="<?php echo esc_url( home_url( ) ); ?>">
+				<?php 
+					if ( function_exists( 'the_custom_logo' ) ) {
+						the_custom_logo();
+					}
+				?>
+			</a>
+			<a href="<?php echo esc_url( home_url( ) ); ?>" class="menu-name">
+				<?php bloginfo( 'name' ); ?>
+			</a>
+			
+			
+			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'simonsays' ); ?></button>
 			<?php
 				wp_nav_menu( array(
 					'theme_location' => 'menu-1',
