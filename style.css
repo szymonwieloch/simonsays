@@ -536,12 +536,6 @@ a:hover, a:active {
 }
 
 .main-navigation ul ul {
-	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-	float: left;
-	position: absolute;
-	top: 100%;
-	left: -999em;
-	z-index: 99999;
 	background-color: #212326;
 	background-color: rgba(33,35,38,0.9);
 }
@@ -566,7 +560,7 @@ a:hover, a:active {
 }
 
 .main-navigation li {
-	float: left;
+	border-top: 1px solid #777;
 	position: relative;
 }
 
@@ -578,10 +572,15 @@ a:hover, a:active {
 	line-height: 50px;
 }
 
+#primary-menu{
+	clear: both;
+}
+
 #primary-menu a {
 	text-align: center;
 	text-transform: uppercase;
 	padding: 0 15px;
+	line-height: 40px;
 }
 
 .site-navigation-space {
@@ -599,12 +598,33 @@ a:hover, a:active {
 	display: block;
 }
 
-@media screen and (min-width: 37.5em) {
+@media screen and (min-width: 800px) {
 	.menu-toggle {
 		display: none;
 	}
 	.main-navigation ul {
 		display: block;
+	}
+	#primary-menu{
+		clear: none;
+	}
+	
+	#primary-menu a {
+		line-height: 50px;
+	}
+	
+	.main-navigation li {
+		float: left;
+		line-height: 50px;
+		border: none;
+	}
+	.main-navigation ul ul{
+		box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+		float: left;
+		position: absolute;
+		top: 100%;
+		left: -999em;
+		z-index: 99999;
 	}
 }
 
@@ -612,7 +632,7 @@ a:hover, a:active {
 	width: 36px;
 	height: 36px;
 	margin: 7px;
-	float: left;
+	float: right;
 }
 
 .site-main .comment-navigation, .site-main
