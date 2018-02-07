@@ -74,7 +74,7 @@ foreach ( $myposts as $post ) : setup_postdata( $post );
 wp_reset_postdata(); 
 ?>
 <section class="wide-box single-box">
-<h1 class="wide-title"> <?php echo __("Random posts") ?></h1>
+<h1 class="wide-title"> <?php esc_html_e( 'Random Posts', 'simonsays' ) ?></h1>
 
 <?php 
     //how to disable the promo category?

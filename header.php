@@ -31,14 +31,14 @@
 	<?php endif; ?>
 
 		<nav id="site-navigation" class="main-navigation">
-			<a href="<?php echo esc_url( home_url( ) ); ?>">
+			<a href="<?php echo esc_url( function_exists( 'pll_home_url' )? pll_home_url():home_url( ) ); ?>">
 				<?php 
 					if ( function_exists( 'the_custom_logo' ) ) {
 						the_custom_logo();
 					}
 				?>
 			</a>
-			<a href="<?php echo esc_url( home_url( ) ); ?>" class="menu-name">
+			<a href="<?php echo esc_url( function_exists( 'pll_home_url' )? pll_home_url():home_url( ) ); ?>" class="menu-name">
 				<?php bloginfo( 'name' ); ?>
 			</a>
 			
