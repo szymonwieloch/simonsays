@@ -44,12 +44,7 @@
 			
 			
 			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">&#9776;</button>
-			<?php
-				wp_nav_menu( array(
-					'theme_location' => 'menu-1',
-					'menu_id'        => 'primary-menu',
-				) );
-			?>
+			
 			<div id="menu-widgets">
 				<?php
 					if(is_active_sidebar('menu-widgets')){
@@ -57,6 +52,13 @@
 					}
 				?>
 			</div>
+			
+			<?php
+				wp_nav_menu( array(
+					'theme_location' => 'menu-1',
+					'menu_id'        => 'primary-menu',
+				) );
+			?>
 		</nav><!-- #site-navigation -->
 		<div class="site-navigation-space"></div>
 		<?php if ( is_front_page() && is_home() && has_header_image()) : ?>
@@ -79,11 +81,34 @@
 					$(window).on('scroll', function(){
 						$('#scroll-down-icon').fadeOut();
 
-					})
+					});
 				});
 			</script>
 		<?php endif; ?>
-
+	
+	<script>
+		$(function(){
+			
+			$('.menu-item-has-children > a').on('click', function(event){
+				console.log('menu click');
+				var child = $(this).parent().children('.sub-menu');
+				console.log('Child: ' + child.text());
+				child.toggle();
+			});
+			
+			$('.menu-item-has-children').on('focusout', function(event){
+				console.log('focus out');
+				var child = $(this).children('.sub-menu');
+				//this is ugly: focusout gets fired before click event
+				//and hiding the child now would stop the click!
+				setTimeout(function(){
+					child.hide()
+				}, 100);
+			});
+			
+			
+		});
+	</script>
 		
 	</header><!-- #masthead -->
 
