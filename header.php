@@ -99,12 +99,14 @@
 			$('.menu-item-has-children').on('focusout', function(event){
 				console.log('focus out');
 				var child = $(this).children('.sub-menu');
+				if (child.is(':hover') || child.is(':active')){
+					return;
+				}
 				//this is ugly: focusout gets fired before click event
 				//and hiding the child now would stop the click!
-				setTimeout(function(){
-					child.hide()
-				}, 100);
+				child.hide();
 			});
+			
 			
 			
 		});
