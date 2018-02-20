@@ -17,7 +17,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<link href="https://fonts.googleapis.com/css?family=Francois+One|Lato:400,400i,700,300" rel="stylesheet">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+	<script src="<?php echo get_template_directory_uri() ?>/js/jquery.mobile.custom.min.js"></script>
 	<?php wp_head(); ?>
 </head>
 
@@ -88,23 +89,22 @@
 	
 	<script>
 		$(function(){
-			
-			$('.menu-item-has-children > a').on('click', function(event){
-				console.log('menu click');
-				var child = $(this).parent().children('.sub-menu');
-				console.log('Child: ' + child.text());
-				child.toggle();
+			$('.menu-item-has-children > a').on('vclick', function(e){
+				console.log('vclick');
+				var parent = $(this).parent();
+				parent.children('.sub-menu').slideToggle();
+				$('.menu-item-has-children').not(parent).children('.sub-menu').slideUp();
+				e.preventDefault();
 			});
-			
-			$('.menu-item-has-children').on('focusout', function(event){
-				console.log('focus out');
-				var child = $(this).children('.sub-menu');
-				if (child.is(':hover') || child.is(':active')){
-					return;
+			$(document).on('vclick', function(e){
+				var menu = $(e.target).parents().filter('.menu-item-has-children');
+				if (menu.length == 0){
+					console.log('empty');
+					$('.menu-item-has-children').children('.sub-menu').slideUp();
+				} else {
+					(console.log('full'));
 				}
-				//this is ugly: focusout gets fired before click event
-				//and hiding the child now would stop the click!
-				child.hide();
+
 			});
 			
 			
