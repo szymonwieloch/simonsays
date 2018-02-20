@@ -17,13 +17,7 @@
 		else :
 			the_title( '<h2 class="page-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 		endif;
-
-		if ( 'post' === get_post_type() ) : ?>
-		<div class="entry-meta">
-			<?php //simonsays_posted_on(); ?>
-		</div><!-- .entry-meta -->
-		<?php
-		endif; ?>
+		?>
 	</header><!-- .entry-header -->
 
 	<div class="post-content">
@@ -50,5 +44,5 @@
 
 	<footer class="post-footer">
 		<?php //simonsays_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
+	</footer><!-- .post-footer -->
 </article><!-- #post-<?php the_ID(); ?> -->
