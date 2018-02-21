@@ -256,6 +256,16 @@ th {
 	padding: 0;
 }
 
+.content-area td, .content-area th {
+	border: 1px solid #d3d3d3;
+}
+
+.content-area th {
+	background-color: #d3d3d3;
+	text-align: center;
+	font-weight: bold;
+}
+
 /*--------------------------------------------------------------
 # Typography
 --------------------------------------------------------------*/
@@ -580,6 +590,10 @@ a:hover, a:focus, a:active {
 	display: block;
 }
 
+.wide-box{
+	padding: 20px 10px;
+}
+
 @media screen and (min-width: 800px) {
 	.menu-toggle {
 		display: none;
@@ -608,6 +622,10 @@ a:hover, a:focus, a:active {
 
 	.main-navigation ul ul a {
 		width: 200px;
+	}
+	
+	.wide-box {
+		padding: 100px 10px;
 	}
 }
 
@@ -1075,10 +1093,6 @@ h1.entry-title {
 	position: absolute;
 	top: 100%;
 	padding: 10px;
-}
-
-.wide-box{
-	padding: 100px 10px;
 }
 
 .wide-title, .page-title {
