@@ -26,7 +26,7 @@ get_header(); ?>
 <?php
 $sticky = get_option( 'sticky_posts');
 rsort( $sticky );
-$args = array('post__in' => $sticky, 'ignore_sticky_posts' => 1 );
+$args = array('post__in' => $sticky, 'ignore_sticky_posts' => 1, 'posts_per_page'   => 100 );
 $myposts = get_posts( $args );
 $myposts_ids = array();
 $double_no = 0;

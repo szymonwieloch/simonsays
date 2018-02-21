@@ -33,7 +33,7 @@ State.prototype.addBubble = function(bubble) {
 }
 
 State.prototype.draw = function(timestamp) {
-    console.log("Drawing...");
+    //console.log("Drawing...");
     this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
     var pushes = this.pushes();
     for (var idx in this._bubbles){
@@ -60,7 +60,7 @@ State.prototype.pushes = function(){
         }
         pushes.push({x: pushX, y: pushY});
     }
-    console.log("pushes="+ pushes);
+    //console.log("pushes="+ pushes);
     return pushes;
 }
 
